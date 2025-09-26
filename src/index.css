@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 263.4 70% 50.4%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 263.4 70% 50.4%;
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+}
+@layer components {
+  .prose-invert {
+    --tw-prose-body: theme(colors.gray[300]);
+    --tw-prose-headings: theme(colors.gray[50]);
+    --tw-prose-lead: theme(colors.gray[400]);
+    --tw-prose-links: theme(colors.purple[400]);
+    --tw-prose-bold: theme(colors.gray[100]);
+    --tw-prose-counters: theme(colors.gray[400]);
+    --tw-prose-bullets: theme(colors.purple[500]);
+    --tw-prose-hr: theme(colors.gray[700]);
+    --tw-prose-quotes: theme(colors.gray[200]);
+    --tw-prose-quote-borders: theme(colors.purple[700]);
+    --tw-prose-captions: theme(colors.gray[400]);
+    --tw-prose-code: theme(colors.purple[300]);
+    --tw-prose-pre-code: theme(colors.gray[300]);
+    --tw-prose-pre-bg: theme(colors.black / 50%);
+    --tw-prose-th-borders: theme(colors.gray[600]);
+    --tw-prose-td-borders: theme(colors.gray[700]);
+  }
+  .prose code {
+    @apply rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm;
+  }
+  .prose pre {
+    @apply border border-purple-500/20;
+  }
+  .prose blockquote {
+    @apply not-italic;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  .blinking-cursor {
+    animation: blink 1s step-end infinite;
+    font-weight: 600;
+    margin-left: 2px;
+  }
+}
